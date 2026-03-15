@@ -50,36 +50,36 @@ Establish the storage layer and populate a playable demo world. Nothing runs wit
 
 ### Project Setup
 
-[ ] Create `requirements.txt` (fastapi, uvicorn, sqlalchemy, aiosqlite, pydantic)
-[ ] Create `app/__init__.py`, `app/models/__init__.py`
-[ ] Create `app/database.py` — async SQLAlchemy engine, sessionmaker, declarative Base
-[ ] Create `app/main.py` — FastAPI app with startup event that creates tables
+[X] Create `requirements.txt` (fastapi, uvicorn, sqlalchemy, aiosqlite, pydantic)
+[X] Create `app/__init__.py`, `app/models/__init__.py`
+[X] Create `app/database.py` — async SQLAlchemy engine, sessionmaker, declarative Base
+[X] Create `app/main.py` — FastAPI app with lifespan event that creates tables
 
 ### Data Models
 
-[ ] Define `World` model in `app/models/world.py` (world_id, world_name, content_version, status)
-[ ] Define `Zone` model in `app/models/world.py` (zone_id, world_id, width, height, terrain_ref, adjacency)
-[ ] Define `Tile` model in `app/models/world.py` (zone_id, x, y, terrain_type, passable, movement_cost)
-[ ] Define `Entity` model in `app/models/entity.py` (entity_id, zone_id, entity_type, definition_id, x, y, facing, state_blob)
-[ ] Define `ItemDefinition` model in `app/models/item.py` (item_def_id, item_name, category, stackable, equipment_slot_rules, stats)
-[ ] Define `ItemInstance` model in `app/models/item.py` (item_instance_id, item_def_id, owner_type, owner_id, quantity)
-[ ] Define `Character` model in `app/models/character.py` (character_id, account_id, character_name, world_id, zone_id, x, y, level, experience)
-[ ] Define `CharacterAttributes` model in `app/models/character.py` (character_id, strength, agility, intellect, endurance, willpower)
-[ ] Define `CharacterResources` model in `app/models/character.py` (character_id, health_current, health_max, mana_current, mana_max)
-[ ] Define `EquipmentAssignment` model in `app/models/equipment.py` (character_id, slot_id, item_instance_id)
-[ ] Define `LivePresence` model in `app/models/presence.py` (character_id, session_id, entity_id, zone_id, x, y, connection_state)
+[X] Define `World` model in `app/models/world.py` (world_id, world_name, content_version, status)
+[X] Define `Zone` model in `app/models/world.py` (zone_id, world_id, width, height, terrain_ref, adjacency)
+[X] Define `Tile` model in `app/models/world.py` (zone_id, x, y, terrain_type, passable, movement_cost)
+[X] Define `Entity` model in `app/models/entity.py` (entity_id, zone_id, entity_type, definition_id, x, y, facing, state_blob)
+[X] Define `ItemDefinition` model in `app/models/item.py` (item_def_id, item_name, category, stackable, equipment_slot_rules, stats)
+[X] Define `ItemInstance` model in `app/models/item.py` (item_instance_id, item_def_id, owner_type, owner_id, quantity)
+[X] Define `Character` model in `app/models/character.py` (character_id, account_id, character_name, world_id, zone_id, x, y, level, experience)
+[X] Define `CharacterAttributes` model in `app/models/character.py` (character_id, strength, agility, intellect, endurance, willpower)
+[X] Define `CharacterResources` model in `app/models/character.py` (character_id, health_current, health_max, mana_current, mana_max)
+[X] Define `EquipmentAssignment` model in `app/models/equipment.py` (character_id, slot_id, item_instance_id)
+[X] Define `LivePresence` model in `app/models/presence.py` (character_id, session_id, entity_id, zone_id, x, y, connection_state)
 
 ### Seed & Bootstrap Functions
 
-[ ] Implement `seed_world` — create one world with 2–3 small zones and basic tile grids (grass, wall, water); populate adjacency
-[ ] Implement `seed_item_definitions` — create a small catalog: a weapon, a piece of armor, and a consumable
-[ ] Implement `seed_entities` — place a few static NPCs and a lootable container in a zone
-[ ] Run seed functions and verify data is queryable
+[X] Implement `seed_world` — create one world with 2–3 small zones and basic tile grids (grass, wall, water); populate adjacency
+[X] Implement `seed_item_definitions` — create a small catalog: a weapon, a piece of armor, and a consumable
+[X] Implement `seed_entities` — place a few static NPCs and a lootable container in a zone
+[X] Run seed functions and verify data is queryable
 
 ### Phase 1 Validation
 
-[ ] Confirm all models can be created, read, and persisted
-[ ] Confirm seed data produces a coherent world with zones, tiles, items, and entities
+[X] Confirm all models can be created, read, and persisted
+[X] Confirm seed data produces a coherent world with zones, tiles, items, and entities
 
 ---
 
