@@ -161,17 +161,17 @@ Expose all character data needed by profile, attributes, resources, skills, and 
 
 ### Functions
 
-[ ] Implement `get_character_profile` — return identity, level, experience, and presentation fields
-[ ] Implement `get_character_attributes` — return base attributes and compute derived values from equipment and effects
-[ ] Implement `get_character_resources` — return current and max resource pools
-[ ] Implement `get_character_skills` — return learned skills with rank, slot assignment, and learned state
-[ ] Implement `get_equipment` — return all equipment assignments with resolved item details
+[X] Implement `get_character_profile` — return identity, level, experience, and presentation fields
+[X] Implement `get_character_attributes` — return base attributes and compute derived values from equipment and effects
+[X] Implement `get_character_resources` — return current and max resource pools
+[X] Implement `get_character_skills` — return learned skills with rank, slot assignment, and learned state
+[X] Implement `get_equipment` — return all equipment assignments with resolved item details
 
 ### Phase 5 Validation — Demo Flow: Character Inspection
 
-[ ] All five read functions return correct data for a freshly created character
-[ ] `get_character_attributes` reflects stat changes after equipping/unequipping an item
-[ ] `get_equipment` returns item definition details alongside slot assignments, not just instance IDs
+[X] All five read functions return correct data for a freshly created character
+[X] `get_character_attributes` reflects stat changes after equipping/unequipping an item
+[X] `get_equipment` returns item definition details alongside slot assignments, not just instance IDs
 
 ---
 
