@@ -179,17 +179,17 @@ Expose all character data needed by profile, attributes, resources, skills, and 
 
 Run the complete demo scenario as a single continuous sequence to confirm all phases work together.
 
-[ ] Seed the world (Phase 1)
-[ ] Authenticate and create a character (Phase 2)
-[ ] Enter the world and verify zone snapshot (Phase 2)
-[ ] Move through several tiles, including rejection cases (Phase 3)
-[ ] Discover and inspect a container entity (Phase 3)
-[ ] Pick up items from the container (Phase 4)
-[ ] Equip a weapon and armor piece (Phase 4)
-[ ] Verify attribute changes from equipment (Phase 5)
-[ ] Drop a consumable and pick it back up (Phase 4)
-[ ] View full character state across all read endpoints (Phase 5)
-[ ] Leave the world and re-enter to confirm state persistence (Phase 2)
+[X] Seed the world (Phase 1)
+[X] Authenticate and create a character (Phase 2)
+[X] Enter the world and verify zone snapshot (Phase 2)
+[X] Move through several tiles, including rejection cases (Phase 3)
+[X] Discover and inspect a container entity (Phase 3)
+[X] Pick up items from the container (Phase 4)
+[X] Equip a weapon and armor piece (Phase 4)
+[X] Verify attribute changes from equipment (Phase 5)
+[X] Drop a consumable and pick it back up (Phase 4)
+[X] View full character state across all read endpoints (Phase 5)
+[X] Leave the world and re-enter to confirm state persistence (Phase 2)
 
 ---
 
