@@ -89,18 +89,18 @@ Build the path from login to standing on the map. This is the first end-to-end u
 
 ### Functions
 
-[ ] Implement `authenticate` — validate credentials, return session_token and account_id (stub acceptable)
-[ ] Implement `list_characters` — return all characters belonging to an account
-[ ] Implement `create_character` — create character, attributes, and resources with starting values; assign to default world/zone/position
-[ ] Implement `load_character` — return character record, attributes, resources, skill list, inventory, and equipment in one response
-[ ] Implement `enter_world` — create LivePresence and world Entity for the character; return zone terrain, nearby entities, and starting position
-[ ] Implement `leave_world` — save position, remove LivePresence and world Entity
+[X] Implement `authenticate` — validate credentials, return session_token and account_id (stub acceptable)
+[X] Implement `list_characters` — return all characters belonging to an account
+[X] Implement `create_character` — create character, attributes, and resources with starting values; assign to default world/zone/position
+[X] Implement `load_character` — return character record, attributes, resources, skill list, inventory, and equipment in one response
+[X] Implement `enter_world` — create LivePresence and world Entity for the character; return zone terrain, nearby entities, and starting position
+[X] Implement `leave_world` — save position, remove LivePresence and world Entity
 
 ### Phase 2 Validation — Demo Flow: Character Creation and World Entry
 
-[ ] `authenticate` → `create_character` → `enter_world` → verify character exists in zone with correct position
-[ ] `leave_world` → verify LivePresence and Entity are removed, position is saved
-[ ] `authenticate` → `list_characters` → `load_character` → `enter_world` → verify returning character resumes at saved position
+[X] `authenticate` → `create_character` → `enter_world` → verify character exists in zone with correct position
+[X] `leave_world` → verify LivePresence and Entity are removed, position is saved
+[X] `authenticate` → `list_characters` → `load_character` → `enter_world` → verify returning character resumes at saved position
 
 ---
 
