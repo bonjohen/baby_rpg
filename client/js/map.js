@@ -37,7 +37,7 @@ const MapRenderer = {
     _resize() {
         const parent = this.canvas.parentElement;
         this.canvas.width = parent.clientWidth;
-        this.canvas.height = parent.clientHeight - 50; // nav bar height
+        this.canvas.height = parent.clientHeight;
     },
 
     render() {
