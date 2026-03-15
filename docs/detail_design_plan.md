@@ -110,18 +110,18 @@ Demonstrate the intent-validate-result loop. The character moves through the wor
 
 ### Functions
 
-[ ] Implement `get_zone` — return zone metadata and tile data for rendering
-[ ] Implement `attempt_move` — validate terrain passability, bounds, and movement rules; update entity and live_presence position on success; return accepted/rejected with new coordinates
-[ ] Implement `get_nearby_entities` — return entities visible from a given position within a radius
-[ ] Implement `get_entity` — return full entity state including state_blob for inspect/interact targeting
+[X] Implement `get_zone` — return zone metadata and tile data for rendering
+[X] Implement `attempt_move` — validate terrain passability, bounds, and movement rules; update entity and live_presence position on success; return accepted/rejected with new coordinates
+[X] Implement `get_nearby_entities` — return entities visible from a given position within a radius
+[X] Implement `get_entity` — return full entity state including state_blob for inspect/interact targeting
 
 ### Phase 3 Validation — Demo Flow: Movement
 
-[ ] Move character through passable tiles and confirm position updates
-[ ] Attempt move into wall/water tile and confirm rejection
-[ ] Attempt move out of zone bounds and confirm rejection
-[ ] Move character near seeded NPCs/containers and confirm they appear in `get_nearby_entities`
-[ ] Inspect a seeded entity with `get_entity` and confirm state_blob is returned
+[X] Move character through passable tiles and confirm position updates
+[X] Attempt move into wall/water tile and confirm rejection
+[X] Attempt move out of zone bounds and confirm rejection
+[X] Move character near seeded NPCs/containers and confirm they appear in `get_nearby_entities`
+[X] Inspect a seeded entity with `get_entity` and confirm state_blob is returned
 
 ---
 
