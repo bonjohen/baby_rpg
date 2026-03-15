@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Baby RPG</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <!-- Login / Character Select (shown before game) -->
+    <div id="login-screen" class="screen"></div>
+
+    <!-- Game Shell (shown after entering world) -->
+    <div id="game-shell" class="screen hidden">
+        <!-- Map Canvas -->
+        <canvas id="map-canvas"></canvas>
+
+        <!-- HUD Overlay -->
+        <div id="hud"></div>
+
+        <!-- D-Pad -->
+        <div id="dpad">
+            <button class="dpad-btn" data-dir="north">&uarr;</button>
+            <div class="dpad-row">
+                <button class="dpad-btn" data-dir="west">&larr;</button>
+                <button class="dpad-btn" data-dir="east">&rarr;</button>
+            </div>
+            <button class="dpad-btn" data-dir="south">&darr;</button>
+        </div>
+
+        <!-- Entity Popup -->
+        <div id="entity-popup" class="hidden"></div>
+
+        <!-- Panel Overlay -->
+        <div id="panel-overlay" class="hidden"></div>
+        <div id="panel-container" class="hidden"></div>
+
+        <!-- Toast Area -->
+        <div id="toast-area"></div>
+
+        <!-- Nav Bar -->
+        <nav id="nav-bar">
+            <button class="nav-btn" data-panel="profile">Profile</button>
+            <button class="nav-btn" data-panel="inventory">Inventory</button>
+            <button class="nav-btn" data-panel="equipment">Equipment</button>
+            <button class="nav-btn" data-panel="skills">Skills</button>
+            <button class="nav-btn" data-panel="menu">Menu</button>
+        </nav>
+    </div>
+
+    <script src="/static/js/utils.js"></script>
+    <script src="/static/js/api.js"></script>
+    <script src="/static/js/state.js"></script>
+    <script src="/static/js/panels/login.js"></script>
+    <script src="/static/js/panels/hud.js"></script>
+    <script src="/static/js/panels/profile.js"></script>
+    <script src="/static/js/panels/inventory.js"></script>
+    <script src="/static/js/panels/equipment.js"></script>
+    <script src="/static/js/panels/skills.js"></script>
+    <script src="/static/js/map.js"></script>
+    <script src="/static/js/input.js"></script>
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
