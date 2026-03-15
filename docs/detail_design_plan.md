@@ -2,6 +2,40 @@
 
 This plan identifies the smallest set of functions needed to demonstrate the core behavior loops described in the design document: character creation, world entry, movement with server validation, inventory/equipment management, and entity visibility. Combat is explicitly deferred per the MVP boundary.
 
+## Tech Stack
+
+- **Language**: Python
+- **Database**: SQLite (via SQLAlchemy ORM + aiosqlite for async)
+- **Server framework**: FastAPI
+- **Validation**: Pydantic v2 (ships with FastAPI)
+
+## Project Structure
+
+```
+baby_rpg/
+├── app/
+│   ├── __init__.py
+│   ├── main.py              # FastAPI app entry point
+│   ├── database.py          # SQLAlchemy engine, session, Base
+│   ├── models/              # SQLAlchemy ORM models
+│   │   ├── __init__.py
+│   │   ├── world.py         # World, Zone, Tile
+│   │   ├── entity.py        # Entity
+│   │   ├── item.py          # ItemDefinition, ItemInstance
+│   │   ├── character.py     # Character, CharacterAttributes, CharacterResources
+│   │   ├── equipment.py     # EquipmentAssignment
+│   │   └── presence.py      # LivePresence
+│   ├── schemas/             # Pydantic request/response schemas
+│   │   └── ...
+│   ├── routers/             # FastAPI route modules
+│   │   └── ...
+│   └── seed.py              # Seed data functions
+├── tests/
+│   └── ...
+├── requirements.txt
+└── docs/
+```
+
 ## Guiding Principles
 
 - Server is source of truth; client sends intents, server validates and returns results.
@@ -14,19 +48,26 @@ This plan identifies the smallest set of functions needed to demonstrate the cor
 
 Establish the storage layer and populate a playable demo world. Nothing runs without this.
 
+### Project Setup
+
+[ ] Create `requirements.txt` (fastapi, uvicorn, sqlalchemy, aiosqlite, pydantic)
+[ ] Create `app/__init__.py`, `app/models/__init__.py`
+[ ] Create `app/database.py` — async SQLAlchemy engine, sessionmaker, declarative Base
+[ ] Create `app/main.py` — FastAPI app with startup event that creates tables
+
 ### Data Models
 
-[ ] Define `World` model (world_id, world_name, content_version, status)
-[ ] Define `Zone` model (zone_id, world_id, width, height, terrain_ref, adjacency)
-[ ] Define `Tile` model (zone_id, x, y, terrain_type, passable, movement_cost)
-[ ] Define `Entity` model (entity_id, zone_id, entity_type, definition_id, x, y, facing, state_blob)
-[ ] Define `ItemDefinition` model (item_def_id, item_name, category, stackable, equipment_slot_rules, stats)
-[ ] Define `ItemInstance` model (item_instance_id, item_def_id, owner_type, owner_id, quantity)
-[ ] Define `Character` model (character_id, account_id, character_name, world_id, zone_id, x, y, level, experience)
-[ ] Define `CharacterAttributes` model (character_id, strength, agility, intellect, endurance, willpower)
-[ ] Define `CharacterResources` model (character_id, health_current, health_max, mana_current, mana_max)
-[ ] Define `EquipmentAssignment` model (character_id, slot_id, item_instance_id)
-[ ] Define `LivePresence` model (character_id, session_id, entity_id, zone_id, x, y, connection_state)
+[ ] Define `World` model in `app/models/world.py` (world_id, world_name, content_version, status)
+[ ] Define `Zone` model in `app/models/world.py` (zone_id, world_id, width, height, terrain_ref, adjacency)
+[ ] Define `Tile` model in `app/models/world.py` (zone_id, x, y, terrain_type, passable, movement_cost)
+[ ] Define `Entity` model in `app/models/entity.py` (entity_id, zone_id, entity_type, definition_id, x, y, facing, state_blob)
+[ ] Define `ItemDefinition` model in `app/models/item.py` (item_def_id, item_name, category, stackable, equipment_slot_rules, stats)
+[ ] Define `ItemInstance` model in `app/models/item.py` (item_instance_id, item_def_id, owner_type, owner_id, quantity)
+[ ] Define `Character` model in `app/models/character.py` (character_id, account_id, character_name, world_id, zone_id, x, y, level, experience)
+[ ] Define `CharacterAttributes` model in `app/models/character.py` (character_id, strength, agility, intellect, endurance, willpower)
+[ ] Define `CharacterResources` model in `app/models/character.py` (character_id, health_current, health_max, mana_current, mana_max)
+[ ] Define `EquipmentAssignment` model in `app/models/equipment.py` (character_id, slot_id, item_instance_id)
+[ ] Define `LivePresence` model in `app/models/presence.py` (character_id, session_id, entity_id, zone_id, x, y, connection_state)
 
 ### Seed & Bootstrap Functions
 
