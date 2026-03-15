@@ -131,27 +131,27 @@ Demonstrate item transfers between world, inventory, and equipment slots.
 
 ### Functions
 
-[ ] Implement `get_inventory` — return all item instances owned by the character (owner_type=character)
-[ ] Implement `add_item_to_inventory` — create or stack an item instance assigned to the character; respect stackable flag and max_stack_size
-[ ] Implement `drop_item` — change owner to world, create a dropped-item entity at the character's position; split stack if partial quantity
-[ ] Implement `pickup_item` — validate proximity, transfer item entity ownership to character inventory, remove world entity
-[ ] Implement `equip_item` — validate slot rules from item definition, swap existing item back to inventory if slot is occupied, create assignment
-[ ] Implement `unequip_item` — remove equipment assignment, return item to inventory
+[X] Implement `get_inventory` — return all item instances owned by the character (owner_type=character)
+[X] Implement `add_item_to_inventory` — create or stack an item instance assigned to the character; respect stackable flag and max_stack_size
+[X] Implement `drop_item` — change owner to world, create a dropped-item entity at the character's position; split stack if partial quantity
+[X] Implement `pickup_item` — validate proximity, transfer item entity ownership to character inventory, remove world entity
+[X] Implement `equip_item` — validate slot rules from item definition, swap existing item back to inventory if slot is occupied, create assignment
+[X] Implement `unequip_item` — remove equipment assignment, return item to inventory
 
 ### Phase 4 Validation — Demo Flow: Item Pickup and Equip
 
-[ ] `pickup_item` from seeded container → `get_inventory` confirms item in inventory
-[ ] `equip_item` to appropriate slot → `get_equipment` confirms item in slot
-[ ] `unequip_item` → item returns to inventory, slot is empty
-[ ] Equip a second item to an occupied slot → first item swaps back to inventory
-[ ] Reject equip when item definition slot rules do not match target slot
+[X] `pickup_item` from seeded container → `get_inventory` confirms item in inventory
+[X] `equip_item` to appropriate slot → `get_equipment` confirms item in slot
+[X] `unequip_item` → item returns to inventory, slot is empty
+[X] Equip a second item to an occupied slot → first item swaps back to inventory
+[X] Reject equip when item definition slot rules do not match target slot
 
 ### Phase 4 Validation — Demo Flow: Item Drop and Retrieval
 
-[ ] `drop_item` → item entity appears at character's position on the map
-[ ] `get_nearby_entities` confirms dropped item is visible
-[ ] `pickup_item` to retrieve → item returns to inventory, world entity removed
-[ ] Drop partial stack → original stack reduced, new world entity has correct quantity
+[X] `drop_item` → item entity appears at character's position on the map
+[X] `get_nearby_entities` confirms dropped item is visible
+[X] `pickup_item` to retrieve → item returns to inventory, world entity removed
+[X] Drop partial stack → original stack reduced, new world entity has correct quantity
 
 ---
 
